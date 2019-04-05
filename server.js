@@ -8,4 +8,8 @@ const server = app.listen(port, (error) => {
         console.log("Server word gehost op port: " + port);
    }
 });
-app.use(express.static('public'))
+app.use(express.static('public'));
+
+//Sockets ....
+const socket = require("socket.io");
+const io = socket(server);
