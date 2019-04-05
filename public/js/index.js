@@ -9,7 +9,7 @@ instellingen_tag.addEventListener('click', () => {
     count_instelligen += 1;
     if (count_instelligen == 1) {
         instelligen = document.createElement("div");
-        instelligen_inhoud = document.createTextNode("Hallo wereld");
+        instelligen_inhoud = document.createTextNode("Instelligen");
         instelligen.style = "background-color: gray; height: 250px;";
         instelligen.appendChild(instelligen_inhoud);
     
