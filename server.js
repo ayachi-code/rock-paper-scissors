@@ -15,11 +15,17 @@ const socket = require("socket.io");
 const io = socket(server);
 
 io.sockets.on('connection', (socket) => {
-    console.log(socket.id)
+    let players = [];
 
+    socket.on('klaar',(data) => {
+        players.push(socket.id)
+        console.log(players)
+    })
 
     socket.on('disconnect', () => {
         console.log(socket.id + "is weg gegaan ");
+        players = players.filter(e => e !== socket.id);
+        console.log(players)
     })
 
 });
