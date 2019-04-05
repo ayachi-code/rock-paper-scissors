@@ -10,3 +10,16 @@ body {
     text-align: center;
     margin-top: 50%;
 }
+
+#start {
+    width: 100px;
+    height: 30px;
+    border-radius: 2px;
+    background-color: white;
+    color: black;
+}
+
+#start:hover {
+    background-color: black;
+    color: white;
+}
