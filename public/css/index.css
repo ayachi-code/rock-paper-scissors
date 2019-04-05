@@ -12,3 +12,12 @@ body {
     height: 100%;
     text-align: center;
 }
+#gebruiksnaam {
+    width: 40%;
+    height: 30px;
+    border-radius: 20px;
+    border-color: white;
+    border-style: dotted;
+    text-align: center;
+
+}
