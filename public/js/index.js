@@ -24,9 +24,9 @@ instellingen_tag.addEventListener('click', () => {
 
 
 input_gebruiksnaam.addEventListener('keypress',(a) => {
-    //event.preventDefault();
     let key = a.keyCode
     if (key == 13) {
         localStorage.setItem("naam",input_gebruiksnaam.value);
+        window.location.href = "game/"
     }
 })
