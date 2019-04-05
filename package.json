@@ -1,0 +1,19 @@
+{
+  "name": "rock-paper-scissors",
+  "version": "1.0.0",
+  "description": "Een steen papier schaar gemake gemaakt door bilal",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayachi-code/rock-paper-scissors.git"
+  },
+  "author": "Bilal el Ayachi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayachi-code/rock-paper-scissors/issues"
+  },
+  "homepage": "https://github.com/ayachi-code/rock-paper-scissors#readme"
+}
