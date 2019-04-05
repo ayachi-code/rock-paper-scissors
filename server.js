@@ -16,4 +16,10 @@ const io = socket(server);
 
 io.sockets.on('connection', (socket) => {
     console.log(socket.id)
+
+
+    socket.on('disconnect', () => {
+        console.log(socket.id + "is weg gegaan ");
+    })
+
 });
