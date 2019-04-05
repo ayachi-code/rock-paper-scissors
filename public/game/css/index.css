@@ -27,3 +27,16 @@ body {
 .keuzes {
     color: white;
 }
+
+
+.steen {
+    float: right;
+    width: 128px;
+    height: 119px;
+}
+
+.papier {
+    float: right;
+    width: 128px;
+    height: 119px;
+}
