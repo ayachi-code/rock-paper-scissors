@@ -1,3 +1,5 @@
+let socket = io();
+
 let start_knop = document.getElementById('start');
 let ready = false;
 
