@@ -1,4 +1,5 @@
 let instellingen_tag = document.getElementById('instellingen');
+let input_gebruiksnaam = document.getElementById("gebruiksnaam");
 let count_instelligen  = 0;
 let instelligen;
 let instelligen_inhoud;
@@ -18,5 +19,14 @@ instellingen_tag.addEventListener('click', () => {
     } else {
         instelligen.parentNode.removeChild(instelligen)
         count_instelligen = 0;
+    }
+})
+
+
+input_gebruiksnaam.addEventListener('keypress',(a) => {
+    event.preventDefault();
+    let key = a.keyCode
+    if (key == 13) {
+        console.log("enter")
     }
 })
