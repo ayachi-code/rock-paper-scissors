@@ -24,9 +24,9 @@ instellingen_tag.addEventListener('click', () => {
 
 
 input_gebruiksnaam.addEventListener('keypress',(a) => {
-    event.preventDefault();
+    //event.preventDefault();
     let key = a.keyCode
     if (key == 13) {
-        console.log("enter")
+        localStorage.setItem("naam",input_gebruiksnaam.value);
     }
 })
