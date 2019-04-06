@@ -5,7 +5,7 @@ body {
 
 .start {
     margin-left: 45%;
-    margin-top: 30%;
+    margin-top: 0px;
 }
 
 #start {
@@ -58,4 +58,12 @@ body {
 .score {
     float: right;
     color: white;
+}
+
+.de_game {
+    border-style: dotted;
+    border-color: white;
+    height: 250px;
+    width: 30%;
+    margin-left: 35%;
 }
