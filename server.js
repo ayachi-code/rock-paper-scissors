@@ -14,14 +14,16 @@ app.use(express.static('public'));
 const socket = require("socket.io");
 const io = socket(server);
 
-io.sockets.on('connection', (socket) => {
-    let players = {naam: [],socketid: []}
 
-    function naam_socketid_toevoegen(naam,socketid) {
-        players.naam.push(naam)
-        players.socketid.push(socketid)
-        return [players.naam.length,players.socketid.length]
-    }
+let players = {naam: [],socketid: []}
+
+function naam_socketid_toevoegen(naam,socketid) {
+    players.naam.push(naam)
+    players.socketid.push(socketid)
+    return [players.naam.length,players.socketid.length]
+}
+
+io.sockets.on('connection', (socket) => {
 
     socket.on('klaar',(data) => {
         naam_socketid_toevoegen(data,socket.id)
