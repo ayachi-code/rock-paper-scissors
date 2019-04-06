@@ -17,6 +17,7 @@ start_knop.addEventListener('click',() => {
         let spel = new Game(naam);
         spel.display_naam();
         spel.display_enemy_namen();
+        spel.Initialiseer_de_game();
     })
 
 
