@@ -13,7 +13,7 @@ class Game {
     display_enemy_namen() {
         socket2.emit('player_names');
         socket2.on('player_names',(data) => {
-            console.log(data)
+            document.getElementById('vs').innerHTML = data.naam[0] + " VS " + data.naam[1]
         });
     }
 }
