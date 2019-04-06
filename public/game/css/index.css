@@ -63,6 +63,9 @@ body {
 .de_game {
     border-style: dotted;
     border-color: white;
+    color: white;
+    text-align: center;
+    font-size: 50px;
     height: 250px;
     width: 30%;
     margin-left: 35%;
