@@ -12,8 +12,11 @@ start_knop.addEventListener('click',() => {
     });
 
     socket.on('genoeg',() => {
-        console.log("Er zijn genoeg spelers... ");
+        //Genoeg spelers en game gaat beginnen
+        console.log("genoeg spelers");
+        let spel = new Game(naam)
     })
+
 
     socket.on('weg',() => {
         console.log('Er zijn al 2 spelers je word nu gekickt ');
