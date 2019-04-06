@@ -32,6 +32,7 @@ io.sockets.on('connection', (socket) => {
             console.log("Genoeg spelers en room is vol ");
         } else if(lengte[0] < 2) {
             console.log("Hmm er zijn geen genoeg spelers");
+            socket.emit('niet')
         } else if (lengte[0] > 2) {
             console.log("He er zijn al 2 spelers je word nu gekickt... ")
         }
