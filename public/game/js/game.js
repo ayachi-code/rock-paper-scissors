@@ -3,7 +3,6 @@ let socket2 = io();
 class Game {
     constructor(naam) {
         this.naam = naam;
-        this
     }
     display_naam() {
         socket.emit('display_name');
