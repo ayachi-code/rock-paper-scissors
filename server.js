@@ -36,6 +36,7 @@ io.sockets.on('connection', (socket) => {
             socket.emit('niet')
         } else if (lengte[0] > 2) {
             console.log("He er zijn al 2 spelers je word nu gekickt... ")
+            socket.emit('weg')
         }
     })
 

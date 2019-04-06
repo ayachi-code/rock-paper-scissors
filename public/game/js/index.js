@@ -15,4 +15,8 @@ start_knop.addEventListener('click',() => {
         console.log("Er zijn genoeg spelers... ");
     })
 
+    socket.on('weg',() => {
+        console.log('Er zijn al 2 spelers je word nu gekickt ');
+    })
+
 })
