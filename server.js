@@ -17,6 +17,12 @@ const io = socket(server);
 io.sockets.on('connection', (socket) => {
     let players = {naam: [],socketid: []}
 
+    function naam_socketid_toevoegen(naam,socketid) {
+        persoon.naam.push(naam)
+        persoon.socketid.push(socketid)
+        return [persoon.naam.length,persoon.socketid.length]
+    }
+
     socket.on('klaar',(data) => {
         console.log(players)
     })
@@ -28,9 +34,3 @@ io.sockets.on('connection', (socket) => {
     })
 
 });
-
-function naam_socketid_toevoegen(naam,socketid) {
-    persoon.naam.push(naam)
-    persoon.socketid.push(socketid)
-    return [persoon.naam.length,persoon.socketid.length]
-}
