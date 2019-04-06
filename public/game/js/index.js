@@ -18,9 +18,7 @@ start_knop.addEventListener('click',() => {
         spel.display_naam();
         spel.display_enemy_namen();
         spel.Initialiseer_de_game();
-        spel.counter_getal();
     })
-
 
     socket.on('weg',() => {
         console.log('Er zijn al 2 spelers je word nu gekickt ');
