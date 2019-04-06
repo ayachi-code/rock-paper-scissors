@@ -40,6 +40,12 @@ io.sockets.on('connection', (socket) => {
         }
     })
 
+
+    socket.on('player_names', () => {
+        io.emit('player_names',players);
+    });
+
+
     socket.on('disconnect', () => {
         console.log(socket.id + "is weg gegaan ");
         //players = players.filter(e => e !== socket.id);
