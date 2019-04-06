@@ -1,8 +1,9 @@
 let socket2 = io();
 
 class Game {
-    constructor(naam) {
+    constructor(naam,counter) {
         this.naam = naam;
+        this.counter = counter;
     }
     display_naam() {
         socket.emit('display_name');
@@ -18,5 +19,8 @@ class Game {
     }
     Initialiseer_de_game() {
         document.getElementById('start').remove();
+    }
+    counter_getal() {
+        console.log(this.counter);
     }
 }
