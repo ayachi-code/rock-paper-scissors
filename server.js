@@ -25,7 +25,10 @@ function naam_socketid_toevoegen(naam,socketid) {
 
 io.sockets.on('connection', (socket) => {
 
+    let naam;
+
     socket.on('klaar',(data) => {
+        naam = data;
         let lengte = naam_socketid_toevoegen(data,socket.id)
         console.log(players)
         if (lengte[0] == 2) {
@@ -51,7 +54,8 @@ io.sockets.on('connection', (socket) => {
 
     socket.on('disconnect', () => {
         console.log(socket.id + "is weg gegaan ");
-        //players = players.filter(e => e !== socket.id);
+        players.naam = players.naam.filter(e => e !== naam);
+        players.socketid = players.socketid.filter(e => e !== socket.id);
         console.log(players)
     })
 
