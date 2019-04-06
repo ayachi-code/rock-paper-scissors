@@ -15,7 +15,8 @@ start_knop.addEventListener('click',() => {
         //Genoeg spelers en game gaat beginnen
         console.log("genoeg spelers");
         let spel = new Game(naam);
-        spel.welkom();
+        spel.display_naam();
+        spel.display_enemy_namen();
     })
 
 

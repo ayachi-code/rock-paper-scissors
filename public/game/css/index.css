@@ -54,3 +54,8 @@ body {
     border-style: dotted;
     border-color: white;
 }
+
+.score {
+    float: right;
+    color: white;
+}

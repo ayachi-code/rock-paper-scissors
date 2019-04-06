@@ -45,6 +45,9 @@ io.sockets.on('connection', (socket) => {
         io.emit('player_names',players);
     });
 
+    socket.on('display_name',() => {
+        io.emit("display_name");
+    });
 
     socket.on('disconnect', () => {
         console.log(socket.id + "is weg gegaan ");
