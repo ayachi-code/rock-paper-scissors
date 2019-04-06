@@ -30,6 +30,7 @@ io.sockets.on('connection', (socket) => {
         console.log(players)
         if (lengte[0] == 2) {
             console.log("Genoeg spelers en room is vol ");
+            io.emit('genoeg')
         } else if(lengte[0] < 2) {
             console.log("Hmm er zijn geen genoeg spelers");
             socket.emit('niet')

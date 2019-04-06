@@ -11,4 +11,8 @@ start_knop.addEventListener('click',() => {
         console.log('Er zijn geen genoeg spelers even geduld');
     });
 
+    socket.on('genoeg',() => {
+        console.log("Er zijn genoeg spelers... ");
+    })
+
 })
