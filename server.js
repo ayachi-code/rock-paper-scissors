@@ -26,8 +26,15 @@ function naam_socketid_toevoegen(naam,socketid) {
 io.sockets.on('connection', (socket) => {
 
     socket.on('klaar',(data) => {
-        naam_socketid_toevoegen(data,socket.id)
+        let lengte = naam_socketid_toevoegen(data,socket.id)
         console.log(players)
+        if (lengte[0] == 2) {
+            console.log("Genoeg spelers en room is vol ");
+        } else if(lengte[0] < 2) {
+            console.log("Hmm er zijn geen genoeg spelers");
+        } else if (lengte[0] > 2) {
+            console.log("He er zijn al 2 spelers je word nu gekickt... ")
+        }
     })
 
     socket.on('disconnect', () => {
