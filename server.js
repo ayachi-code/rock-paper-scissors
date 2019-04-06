@@ -18,12 +18,13 @@ io.sockets.on('connection', (socket) => {
     let players = {naam: [],socketid: []}
 
     function naam_socketid_toevoegen(naam,socketid) {
-        persoon.naam.push(naam)
-        persoon.socketid.push(socketid)
-        return [persoon.naam.length,persoon.socketid.length]
+        players.naam.push(naam)
+        players.socketid.push(socketid)
+        return [players.naam.length,players.socketid.length]
     }
 
     socket.on('klaar',(data) => {
+        naam_socketid_toevoegen(data,socket.id)
         console.log(players)
     })
 

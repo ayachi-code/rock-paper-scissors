@@ -7,5 +7,5 @@ let ready = false;
 start_knop.addEventListener('click',() => {
     console.log("Je bent ready kijken als andere speler ready is...")
     ready = true;
-    socket.emit('klaar',ready);
+    socket.emit('klaar',naam);
 })
