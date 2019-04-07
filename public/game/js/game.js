@@ -44,6 +44,7 @@ class Game {
             if (this.counter <= 0) {
                 clearInterval(count_beneden)
                 document.getElementById('teller').innerHTML = 'klaar';
+                console.log(this.keuze)
                 callback('klaar')
             }
         },1200);
