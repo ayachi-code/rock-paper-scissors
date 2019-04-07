@@ -21,12 +21,14 @@ class Game {
     Initialiseer_de_game() {
         document.getElementById('start').remove();
     }
-    counter_tijd() {
+    spel_beginnen(callback) {
         let count_beneden = setInterval(() => {
             this.counter -= 1;
-            console.log(this.counter);
+            document.getElementById('teller').innerHTML = this.counter;
             if (this.counter <= 0) {
                 clearInterval(count_beneden)
+                document.getElementById('teller').innerHTML = 'klaar';
+                callback('klaar')
             }
         },1200);
     }

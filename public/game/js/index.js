@@ -18,7 +18,9 @@ start_knop.addEventListener('click',() => {
         spel.display_naam();
         spel.display_enemy_namen();
         spel.Initialiseer_de_game();
-        spel.counter_tijd();
+        spel.spel_beginnen((data) => {
+            console.log(data)
+        });
     })
 
     socket.on('weg',() => {
@@ -27,3 +29,24 @@ start_knop.addEventListener('click',() => {
     })
 
 })
+
+
+//testen
+/*
+function git(limit, callback) {
+    var i = limit;
+    var git = setInterval(function () {
+        console.log(i);
+        if (i <= 0) {
+            clearInterval(git);
+            callback(true);
+        }
+        i--;
+    }, 800);
+}
+
+git(5, function (x) {
+    console.log(x)
+});
+
+*/
