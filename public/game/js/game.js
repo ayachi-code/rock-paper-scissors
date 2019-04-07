@@ -5,6 +5,7 @@ class Game {
         this.naam = naam;
         this.counter = counter;
         this.counter = 4;
+        this.keuze;
     }
     display_naam() {
         socket.emit('display_name');
@@ -24,14 +25,17 @@ class Game {
     spel_beginnen(callback) {
         let count_beneden = setInterval(() => {
             document.getElementById('steen').addEventListener('click',() => {
+                this.keuze = "steen";
                 console.log('steen is geklikt ');
                 document.getElementById('je_keuze').innerHTML = "Je keuze is: steen ";
             })
             document.getElementById('papier').addEventListener('click',() => {
+                this.keuze = "papier";
                 console.log('papier is geklikt ');
                 document.getElementById('je_keuze').innerHTML = "Je keuze is: papier ";
             })
             document.getElementById('schaar').addEventListener('click',() => {
+                this.keuze = "schaar";
                 console.log('schaar is geklikt ');
                 document.getElementById('je_keuze').innerHTML = "Je keuze is: schaar ";
             })
