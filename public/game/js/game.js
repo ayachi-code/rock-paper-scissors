@@ -3,8 +3,7 @@ let socket2 = io();
 class Game {
     constructor(naam,counter) {
         this.naam = naam;
-        this.counter = counter;
-        this.counter = 4;
+        this.counter = counter + 1;
         this.keuze;
     }
     display_naam() {

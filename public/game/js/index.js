@@ -14,7 +14,7 @@ start_knop.addEventListener('click',() => {
     socket.on('genoeg',() => {
         //Genoeg spelers en game gaat beginnen
         console.log("genoeg spelers");
-        let spel = new Game(naam,3);
+        let spel = new Game(naam,6);
         spel.display_naam();
         spel.display_enemy_namen();
         spel.Initialiseer_de_game();
