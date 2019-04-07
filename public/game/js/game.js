@@ -4,7 +4,7 @@ class Game {
     constructor(naam,counter) {
         this.naam = naam;
         this.counter = counter;
-        this.nummer = 0;
+        this.counter = 4;
     }
     display_naam() {
         socket.emit('display_name');
@@ -20,5 +20,14 @@ class Game {
     }
     Initialiseer_de_game() {
         document.getElementById('start').remove();
+    }
+    counter_tijd() {
+        let count_beneden = setInterval(() => {
+            this.counter -= 1;
+            console.log(this.counter);
+            if (this.counter <= 0) {
+                clearInterval(count_beneden)
+            }
+        },1200);
     }
 }
