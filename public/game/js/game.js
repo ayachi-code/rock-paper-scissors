@@ -21,6 +21,7 @@ class Game {
     }
     Initialiseer_de_game() {
         document.getElementById('start').remove();
+        document.getElementById('ronde').innerHTML = "ronde: " + 1;
     }
     spel_beginnen(callback) {
         let count_beneden = setInterval(() => {
