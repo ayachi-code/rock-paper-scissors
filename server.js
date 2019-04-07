@@ -15,7 +15,7 @@ const socket = require("socket.io");
 const io = socket(server);
 
 
-let players = {naam: [],socketid: []}
+let players = {naam: [],socketid: [],keuze: []};
 
 function naam_socketid_toevoegen(naam,socketid) {
     players.naam.push(naam)
@@ -50,6 +50,12 @@ io.sockets.on('connection', (socket) => {
 
     socket.on('display_name',() => {
         io.emit("display_name");
+    });
+
+    socket.on('keuzen',(data) => {
+        //console.log(socket.id + ": " + data)
+        players.keuze.push(data);
+        console.log(players)
     });
 
     socket.on('disconnect', () => {
