@@ -23,6 +23,18 @@ class Game {
     }
     spel_beginnen(callback) {
         let count_beneden = setInterval(() => {
+            document.getElementById('steen').addEventListener('click',() => {
+                console.log('steen is geklikt ');
+                document.getElementById('je_keuze').innerHTML = "Je keuze is: steen ";
+            })
+            document.getElementById('papier').addEventListener('click',() => {
+                console.log('papier is geklikt ');
+                document.getElementById('je_keuze').innerHTML = "Je keuze is: papier ";
+            })
+            document.getElementById('schaar').addEventListener('click',() => {
+                console.log('schaar is geklikt ');
+                document.getElementById('je_keuze').innerHTML = "Je keuze is: schaar ";
+            })
             this.counter -= 1;
             document.getElementById('teller').innerHTML = this.counter;
             if (this.counter <= 0) {

@@ -21,7 +21,6 @@ start_knop.addEventListener('click',() => {
         spel.spel_beginnen((data) => {
             if (data) {
                 console.log("klaar !")
-                spel.keuze();
             }
         });
     })
