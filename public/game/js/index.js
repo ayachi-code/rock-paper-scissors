@@ -26,29 +26,8 @@ start_knop.addEventListener('click',() => {
     })
 
     socket.on('weg',() => {
-        console.log('Er zijn al 2 spelers je word nu gekickt ');
+        console.log('Er zijn al 2 spelers je wordt nu gekickt ');
         //window.location.href = "/"
     })
 
 })
-
-
-//testen
-/*
-function git(limit, callback) {
-    var i = limit;
-    var git = setInterval(function () {
-        console.log(i);
-        if (i <= 0) {
-            clearInterval(git);
-            callback(true);
-        }
-        i--;
-    }, 800);
-}
-
-git(5, function (x) {
-    console.log(x)
-});
-
-*/
