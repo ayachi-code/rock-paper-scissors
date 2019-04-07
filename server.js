@@ -55,7 +55,6 @@ io.sockets.on('connection', (socket) => {
     socket.on('keuzen',(data) => {
         //console.log(socket.id + ": " + data)
         players.keuze.push(data);
-        console.log(players)
     });
 
     socket.on('disconnect', () => {
@@ -66,3 +65,38 @@ io.sockets.on('connection', (socket) => {
     })
 
 });
+
+
+let persoon = { naam: [ 'bilal', 'jan' ],socketid: [ 'ILTokuMvMJuDOlV2AAAG', 'ZrQD66V_TLlwZiERAAAI' ],keuze: [ 'papier','schaar'] }
+
+if (persoon.keuze[0] == "steen" && persoon.keuze[1] == "schaar") {
+    console.log(persoon.naam[0] + " heeft gewonnen");
+} else if(persoon.keuze[0] == "steen" && persoon.keuze[1] == "papier") {
+    console.log(persoon.naam[1] + " heeft gewonnen");
+}  else if(persoon.keuze[0] == "steen" && persoon.keuze[1] == "steen") {
+    console.log("gelijk spel");
+} else if (persoon.keuze[1] == "steen" && persoon.keuze[0] == "schaar") {
+    console.log(persoon.naam[1] + " heeft gewonnen");
+} else if (persoon.keuze[1] == "steen" && persoon.keuze[0] == "papier") {
+    console.log(persoon.naam[0] + " heeft gewonnen");
+} else if (persoon.keuze[0] == "papier" && persoon.keuze[1] == "schaar") {
+    console.log(persoon.naam[1] + " heeft gewonnen");
+} else if (persoon.keuze[0] == "papier" && persoon.keuze[1] == "steen") {
+    console.log(persoon.naam[0] + " heeft gewonnen");
+} else if (persoon.keuze[0] == "papier" && persoon.keuze[1] == "papier") {
+    console.log("Gelijk spel ");
+} else if (persoon.keuze[1] == "papier" && persoon.keuze[0] == "schaar") {
+    console.log(persoon.naam[0] + " heeft gewonnen");
+} else if (persoon.keuze[1] == "papier" && persoon.keuze[0] == "steen") {
+    console.log(persoon.naam[1] + " heeft gewonnen");
+} else if (persoon.keuze[0] == "schaar" && persoon.keuze[1] == "schaar") {
+    console.log('gelijk spel')
+} else if (persoon.keuze[0] == "schaar" && persoon.keuze[1] == "papier") {
+    console.log(persoon.naam[0] + " heeft gewonnen");
+} else if (persoon.keuze[0] == "schaar" && persoon.keuze[1] == "steen") {
+    console.log(persoon.naam[1] + " heeft gewonnen");
+} else if (persoon.keuze[1] == "schaar" && persoon.keuze[0] == "papier") {
+    console.log(persoon.naam[1] + " heeft gewonnen");
+} else if (persoon.keuze[0] == "schaar" && persoon.keuze[1] == "steen") {
+    console.log(persoon.naam[1] + " heeft gewonnen");
+}
