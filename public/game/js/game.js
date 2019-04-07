@@ -1,10 +1,11 @@
 let socket2 = io();
 
 class Game {
-    constructor(naam,counter) {
+    constructor(naam,counter,rondes) {
         this.naam = naam;
         this.counter = counter + 1;
         this.keuze;
+        this.rondes = rondes;
     }
     display_naam() {
         socket.emit('display_name');
