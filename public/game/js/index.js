@@ -19,7 +19,10 @@ start_knop.addEventListener('click',() => {
         spel.display_enemy_namen();
         spel.Initialiseer_de_game();
         spel.spel_beginnen((data) => {
-            console.log(data)
+            if (data) {
+                console.log("klaar !")
+                spel.keuze();
+            }
         });
     })
 
