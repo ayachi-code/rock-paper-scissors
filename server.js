@@ -14,7 +14,6 @@ app.use(express.static('public'));
 const socket = require("socket.io");
 const io = socket(server);
 
-
 let players = {naam: [],socketid: [],keuze: []};
 
 function naam_socketid_toevoegen(naam,socketid) {
@@ -26,6 +25,8 @@ function naam_socketid_toevoegen(naam,socketid) {
 io.sockets.on('connection', (socket) => {
 
     let naam;
+    let gewonnen;
+    let keuze;
 
     socket.on('klaar',(data) => {
         naam = data;
@@ -39,6 +40,7 @@ io.sockets.on('connection', (socket) => {
             socket.emit('niet')
         } else if (lengte[0] > 2) {
             console.log("He er zijn al 2 spelers je word nu gekickt... ")
+            //window.location.href = "/"
             socket.emit('weg')
         }
     })
@@ -53,44 +55,61 @@ io.sockets.on('connection', (socket) => {
     });
 
     socket.on('keuzen',(data) => {
+        keuze = data;
         players.keuze.push(data);
+        console.log(players)
         if (players.keuze[0] == "steen" && players.keuze[1] == "schaar") {
             console.log(players.naam[0] + " heeft gewonnen");
+            gewonnen = players.naam[0]
         } else if(players.keuze[0] == "steen" && players.keuze[1] == "papier") {
             console.log(players.naam[1] + " heeft gewonnen");
+            gewonnen = players.naam[1]
         }  else if(players.keuze[0] == "steen" && players.keuze[1] == "steen") {
             console.log("gelijk spel");
         } else if (players.keuze[1] == "steen" && players.keuze[0] == "schaar") {
             console.log(players.naam[1] + " heeft gewonnen");
+            gewonnen = players.naam[1]
         } else if (players.keuze[1] == "steen" && players.keuze[0] == "papier") {
             console.log(players.naam[0] + " heeft gewonnen");
+            gewonnen = players.naam[0]
         } else if (players.keuze[0] == "papier" && players.keuze[1] == "schaar") {
             console.log(players.naam[1] + " heeft gewonnen");
+            gewonnen = players.naam[1]
         } else if (players.keuze[0] == "papier" && players.keuze[1] == "steen") {
             console.log(players.naam[0] + " heeft gewonnen");
+            gewonnen = players.naam[0]
         } else if (players.keuze[0] == "papier" && players.keuze[1] == "papier") {
             console.log("Gelijk spel ");
         } else if (players.keuze[1] == "papier" && players.keuze[0] == "schaar") {
             console.log(players.naam[0] + " heeft gewonnen");
+            gewonnen = players.naam[0]
         } else if (players.keuze[1] == "papier" && players.keuze[0] == "steen") {
             console.log(players.naam[1] + " heeft gewonnen");
+            gewonnen = players.naam[1]
         } else if (players.keuze[0] == "schaar" && players.keuze[1] == "schaar") {
             console.log('gelijk spel')
         } else if (players.keuze[0] == "schaar" && players.keuze[1] == "papier") {
             console.log(players.naam[0] + " heeft gewonnen");
+            gewonnen = players.naam[0]
         } else if (players.keuze[0] == "schaar" && players.keuze[1] == "steen") {
             console.log(players.naam[1] + " heeft gewonnen");
+            gewonnen = players.naam[1]
         } else if (players.keuze[1] == "schaar" && players.keuze[0] == "papier") {
             console.log(players.naam[1] + " heeft gewonnen");
+            gewonnen = players.naam[1]
         } else if (players.keuze[0] == "schaar" && players.keuze[1] == "steen") {
             console.log(players.naam[1] + " heeft gewonnen");
+            gewonnen = players.naam[1]
         }
+        console.log(gewonnen + "test");
+        io.emit('gewonnen',gewonnen)
     });
 
     socket.on('disconnect', () => {
         console.log(socket.id + "is weg gegaan ");
         players.naam = players.naam.filter(e => e !== naam);
         players.socketid = players.socketid.filter(e => e !== socket.id);
+        players.keuze = players.keuze.filter(e => e !== keuze);
         console.log(players)
     })
 

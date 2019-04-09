@@ -45,9 +45,13 @@ class Game {
             if (this.counter <= 0) {
                 clearInterval(count_beneden)
                 document.getElementById('teller').innerHTML = 'klaar';
-                //console.log(this.keuze)
                 socket.emit('keuzen',this.keuze);
-                callback('klaar')
+                socket.on('gewonnen',(data) => {
+                    //callback(data)
+                    console.log(data)
+                    document.getElementById('winnaar').innerHTML = "winnaar: " + data;
+                });
+                //callback('klaar')
             }
         },1200);
     }

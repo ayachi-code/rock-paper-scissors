@@ -7,6 +7,7 @@ start_knop.addEventListener('click',() => {
     console.log("Je bent ready kijken als andere speler ready is...")
     socket.emit('klaar',naam);
 
+    socket.on('eten','patat');
     socket.on('niet',() => {
         console.log('Er zijn geen genoeg spelers even geduld');
     });
@@ -20,7 +21,7 @@ start_knop.addEventListener('click',() => {
         spel.Initialiseer_de_game();
         spel.spel_beginnen((data) => {
             if (data) {
-                console.log("klaar !")
+                console.log(data)
             }
         });
     })
